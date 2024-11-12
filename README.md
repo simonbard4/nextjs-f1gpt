@@ -24,7 +24,7 @@ cd your-repo-name
 2. Build and Run the Application with Docker
 * Run the following command to build the Docker image and start the container:
 ```
-docker-compose up --build
+docker-compose up
 ```
 * This will build the image (if it's not already built) and start the container.
 * The application will be available at http://localhost:3000.
