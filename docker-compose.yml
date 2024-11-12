@@ -1,0 +1,11 @@
+services:
+  nextjs-app:
+    build: .
+    image: nextjs-f1gpt
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+    command: npm run dev
