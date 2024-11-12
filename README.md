@@ -1,40 +1,66 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
 
+# Next.js App with Docker
+
+This project is a Next.js application set up with Docker for easy development and deployment.
+
+## Requirements
+
+Before you begin, make sure you have the following installed:
+
+Docker: [Install Docker](https://docs.docker.com/engine/install/)
+Docker Compose: [Install Docker Compose](https://docs.docker.com/compose/install/)
+
 ## Getting Started
 
-First, run the development server:
+Follow these steps to run the application using Docker.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Clone the Repository
+Clone this repository to your local machine:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+    git clone https://github.com/yourusername/your-repo-name.git
+    cd your-repo-name
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+2. Build and Run the Application with Docker
+Run the following command to build the Docker image and start the container:
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+    docker-compose up --build
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+* This will build the image (if it's not already built) and start the container.
+* The application will be available at http://localhost:3000.
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. Development Workflow
+When the container is running, any changes made to the code on your local machine will automatically be reflected in the container. This is achieved through the volume mounting feature in Docker.
 
-## Learn More
+4. Stopping the Application
+To stop the application and remove the container, press Ctrl + C and run the following command to remove the stopped container:
 
-To learn more about Next.js, take a look at the following resources:
+    docker-compose down
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+5. Rebuilding the Docker Image
+If you've made changes to the Dockerfile or dependencies, you may want to rebuild the image:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+    docker-compose up --build
 
-## Deploy on Vercel
+## Docker Commands
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Here are some helpful Docker commands:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+* Build the Docker image:
+    docker-compose build
+
+* Run the application:
+    docker-compose up
+
+* Stop the application:
+    docker-compose down
+
+* Remove stopped containers and volumes:
+    docker-compose down --volumes
+
+## Troubleshooting
+
+* If you encounter issues with missing dependencies or outdated packages, you can try clearing Docker's cache and rebuilding the image:
+    docker-compose build --no-cache
+
+* Make sure you have the correct permissions to run Docker commands if you're on Linux.
