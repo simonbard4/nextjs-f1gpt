@@ -16,13 +16,13 @@ Docker Compose: [Install Docker Compose](https://docs.docker.com/compose/install
 Follow these steps to run the application using Docker.
 
 1. Clone the Repository
-Clone this repository to your local machine:
+* Clone this repository to your local machine:
 ```
 git clone https://github.com/yourusername/your-repo-name.git
 cd your-repo-name
 ```
 2. Build and Run the Application with Docker
-Run the following command to build the Docker image and start the container:
+* Run the following command to build the Docker image and start the container:
 ```
 docker-compose up --build
 ```
@@ -30,15 +30,15 @@ docker-compose up --build
 * The application will be available at http://localhost:3000.
 
 3. Development Workflow
-When the container is running, any changes made to the code on your local machine will automatically be reflected in the container. This is achieved through the volume mounting feature in Docker.
+* When the container is running, any changes made to the code on your local machine will automatically be reflected in the container. This is achieved through the volume mounting feature in Docker.
 
 4. Stopping the Application
-To stop the application and remove the container, press Ctrl + C and run the following command to remove the stopped container:
+* To stop the application and remove the container, press Ctrl + C and run the following command to remove the stopped container:
 ```
 docker-compose down
 ```
 5. Rebuilding the Docker Image
-If you've made changes to the Dockerfile or dependencies, you may want to rebuild the image:
+* If you've made changes to the Dockerfile or dependencies, you may want to rebuild the image:
 ```
 docker-compose up --build
 ```
