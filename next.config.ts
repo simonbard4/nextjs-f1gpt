@@ -1,13 +1,14 @@
-import type { NextConfig } from "next";
+import { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
   reactStrictMode: true,
-  webpackDevMiddleware: (config: any) => {
-    config.watchOptions = {
-      poll: 1000,
-      aggregateTimeout: 300,
-    };
+  webpack: (config, { dev, isServer }) => {
+    if (dev && !isServer) {
+      config.watchOptions = {
+        poll: 1000,            // Check for file changes every 1 second
+        aggregateTimeout: 300, // Delay before rebuilding
+      };
+    }
     return config;
   },
 };
